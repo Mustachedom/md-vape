@@ -1,6 +1,6 @@
 how to install
 
-
+Requirements: ps-buffs, qb-core, rp or dp emotes
 step 1 add these items to your items.lua
 ```
 ["vegetable_glycol"] 				 = {["name"] = "vegetable_glycol", 			  	["label"] = "Vegetable Glycerin", 		["weight"] = 100, 		["type"] = "item", 		["image"] = "vegetableglycol.png", 	["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
