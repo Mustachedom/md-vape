@@ -161,8 +161,8 @@ end)
 QBCore.Functions.CreateUseableItem("yellow_vape", function(source, item)
    local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-	if TriggerClientEvent("md-vape:client:astro", src) then
-		Player.Functions.RemoveItem("astro", 1)
+	if TriggerClientEvent("md-vape:client:yellow_vape", src) then
+		Player.Functions.RemoveItem("yellow_vape", 1)
     end
 end)
 
