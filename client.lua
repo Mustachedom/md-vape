@@ -121,7 +121,11 @@ RegisterNetEvent('md-vape:client:feistyvape', function()
 			disableCombat = true,
 		}, {}, {}, {}, function() -- Done
 		    exports['ps-buffs']:StaminaBuffEffect(15000, 1.1)
-			exports["rpemotes"]:EmoteCancel(forceCancel)
+				if Config.rp then
+					exports["rpemotes"]:EmoteCancel(forceCancel)
+				else
+					ClearPedTasks(PlayerPedId())
+				end
 		end)
 end)
 
@@ -138,7 +142,11 @@ RegisterNetEvent('md-vape:client:apple_vape', function()
 			disableCombat = true,
 		}, {}, {}, {}, function() -- Done
 			exports["ps-buffs"]:AddArmorBuff(15000, 10)
-			exports["rpemotes"]:EmoteCancel(forceCancel)
+							if Config.rp then
+					exports["rpemotes"]:EmoteCancel(forceCancel)
+				else
+					ClearPedTasks(PlayerPedId())
+				end
 		end)
 end)
 
@@ -155,7 +163,11 @@ RegisterNetEvent('md-vape:client:brums_vape', function()
 			disableCombat = true,
 		}, {}, {}, {}, function() -- Done
 		    exports['ps-buffs']:StaminaBuffEffect(15000, 1.4)
-			exports["rpemotes"]:EmoteCancel(forceCancel)
+							if Config.rp then
+					exports["rpemotes"]:EmoteCancel(forceCancel)
+				else
+					ClearPedTasks(PlayerPedId())
+				end
 		end)
 end)
 
@@ -169,7 +181,11 @@ RegisterNetEvent('md-vape:client:watermelon_vape', function()
 			TriggerEvent('animations:client:EmoteCommandStart', {"hitvape"})
 			Wait(250) 
 			exports['ps-buffs']:AddStressBuff(20000, 25)
-			exports["rpemotes"]:EmoteCancel(forceCancel)
+							if Config.rp then
+					exports["rpemotes"]:EmoteCancel(forceCancel)
+				else
+					ClearPedTasks(PlayerPedId())
+				end
 		end)
 end)
 
