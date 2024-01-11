@@ -209,106 +209,91 @@ end)
 ------------- targets
 
 CreateThread(function()
-exports['qb-target']:AddBoxZone("craftvape",Config.craftloc,1.5, 1.75, { -- 963.37, -2122.95, 31.47
-	name = "craftvape",
-	heading = 11.0,
-	debugPoly = false,
-	minZ = Config.craftloc-2,
-	maxZ = Config.craftloc+2,
-}, {
-	options = {
+	exports.ox_target:addBoxZone({
+		coords = Config.craftloc,
+		size = vec3(1.5,1.5,1.75),
+		rotation = 11.0,
+		debug = false,
+		drawsprite = true,
+		options = {
+			{
+				event = "md-vape:client:feistyvapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Feisty Vape",
+				groups = {'vapeshop'},
+			},
+			{
+				event = "md-vape:client:brums_vapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Brums Vape",
+				groups = {'vapeshop'},
+			},
+			{
+				event = "md-vape:client:apple_vapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Apple Vape",
+				groups = {'vapeshop'},
+			},
+			{
+				event = "md-vape:client:watermelon_vapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Watermelon Vape",
+				groups = {'vapeshop'},
+			},
+			{
+				event = "md-vape:client:yellow_vapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Yellow Vape",
+				groups = {'vapeshop'},
+			}
+		}
+	}) 
+
+	exports.ox_target:addBoxZone({
+		coords = Config.storeloc,
+		size = vec3(1.5,1.5,1.75),
+		rotation = 11.0,
+		debug = false,
+		drawsprite = true,
+		options = {
+			{
+				event = 'md-vape:client:openvapeshop',
+				icon = "fas fa-sign-in-alt",
+				label = "Shop",
+				groups = {'vapeshop'},
+			},
+		}
+	})
+
+	exports.ox_target:addBoxZone({
+	coords = Config.stashloc,
+ 	size = vec3(1,1,1),
+ 	rotation = 11.0,
+ 	debug = false,
+ 	drawsprite = true,
+ 	options = {
 		{
-            type = "client",
-            event = "md-vape:client:feistyvapecraft",
+			event = 'md-stashes:client:vapeshop1',
 			icon = "fas fa-sign-in-alt",
-			label = "Craft Feisty Vape",
-			job = "vapeshop"
+			label = "Stash",
+			groups = {'vapeshop'},
 		},
+		}
+	})
+
+ 	exports.ox_target:addBoxZone({
+		coords = Config.stashtwoloc,
+	 	size = vec3(1,1,1),
+	 	rotation = 11.0,
+	 	debug = false,
+	 	drawsprite = true,
+	 	options = {
 		{
-            type = "client",
-            event = "md-vape:client:brums_vapecraft",
-			icon = "fas fa-sign-in-alt",
-			label = "Craft Brums Vape",
-			job = "vapeshop"
-		},
-		{
-            type = "client",
-            event = "md-vape:client:apple_vapecraft",
-			icon = "fas fa-sign-in-alt",
-			label = "Craft Apple Vape",
-			job = "vapeshop"
-		},
-		{
-            type = "client",
-            event = "md-vape:client:watermelon_vapecraft",
-			icon = "fas fa-sign-in-alt",
-			label = "Craft Watermelon Vape",
-			job = "vapeshop"
-		},
-		{
-            type = "client",
-            event = "md-vape:client:yellow_vapecraft",
-			icon = "fas fa-sign-in-alt",
-			label = "Craft Yellow Vape",
-			job = "vapeshop"
-		},
-	},
-	distance = 2.5
- })
- 
- exports['qb-target']:AddBoxZone("vapestoreloc",Config.storeloc,1.5, 1.75, { -- 963.37, -2122.95, 31.47
-	name = "vapestoreloc",
-	heading = 11.0,
-	debugPoly = false,
-	minZ = Config.storeloc-2,
-	maxZ = Config.storeloc+2,
-}, {
-	options = {
-		{
-            type = "client",
-            event = 'md-vape:client:openvapeshop',
-			icon = "fas fa-sign-in-alt",
-			label = "Craft",
-			job = "vapeshop"
-		},
-	},
-	distance = 2.5
- })
- 
- exports['qb-target']:AddBoxZone("vapestashloc",Config.stashloc,1.5, 1.75, { -- 963.37, -2122.95, 31.47
-	name = "vapestoreloc",
-	heading = 11.0,
-	debugPoly = false,
-	minZ = Config.stashloc-2,
-	maxZ = Config.stashloc+2,
-}, {
-	options = {
-		{
-            type = "client",
-            event = 'md-stashes:client:vapeshop1',
-			icon = "fas fa-sign-in-alt",
-			label = "Craft",
-			job = "vapeshop"
-		},
-	},
-	distance = 2.5
- })
-  exports['qb-target']:AddBoxZone("vapestashtwoloc",Config.stashtwoloc,1.5, 1.75, { -- 963.37, -2122.95, 31.47
-	name = "vapestashtwoloc",
-	heading = 11.0,
-	debugPoly = false,
-	minZ = Config.stashtwoloc-2,
-	maxZ = Config.stashtwoloc+2,
-}, {
-	options = {
-		{
-            type = "client",
             event = 'md-stashes:client:vapeshop2',
 			icon = "fas fa-sign-in-alt",
-			label = "Craft",
-			job = "vapeshop"
-		},
-	},
-	distance = 2.5
- })
- end)
+			label = "Stash",
+			groups = {'vapeshop'},
+		}
+	}
+	})
+end)
