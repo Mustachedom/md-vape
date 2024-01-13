@@ -1,6 +1,6 @@
 name "md-vape"
 author "Mustache_dom"
-version "v1"
+version "v1.1"
 description "Vape by Mustache_dom"
 fx_version "cerulean"
 game "gta5"

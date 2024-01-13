@@ -209,7 +209,96 @@ end)
 ------------- targets
 
 CreateThread(function()
-exports['qb-target']:AddBoxZone("craftvape",Config.craftloc,1.5, 1.75, { -- 963.37, -2122.95, 31.47
+	if Config.Target == "ox" then
+	exports.ox_target:addBoxZone({
+		coords = Config.craftloc,
+		size = vec3(1.5,1.5,1.75),
+		rotation = 11.0,
+		debug = false,
+		drawsprite = true,
+		options = {
+			{
+				event = "md-vape:client:feistyvapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Feisty Vape",
+				groups = {'vapeshop'},
+			},
+			{
+				event = "md-vape:client:brums_vapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Brums Vape",
+				groups = {'vapeshop'},
+			},
+			{
+				event = "md-vape:client:apple_vapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Apple Vape",
+				groups = {'vapeshop'},
+			},
+			{
+				event = "md-vape:client:watermelon_vapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Watermelon Vape",
+				groups = {'vapeshop'},
+			},
+			{
+				event = "md-vape:client:yellow_vapecraft",
+				icon = "fas fa-sign-in-alt",
+				label = "Craft Yellow Vape",
+				groups = {'vapeshop'},
+			}
+		}
+	}) 
+
+	exports.ox_target:addBoxZone({
+		coords = Config.storeloc,
+		size = vec3(1.5,1.5,1.75),
+		rotation = 11.0,
+		debug = false,
+		drawsprite = true,
+		options = {
+			{
+				event = 'md-vape:client:openvapeshop',
+				icon = "fas fa-sign-in-alt",
+				label = "Shop",
+				groups = {'vapeshop'},
+			},
+		}
+	})
+
+	exports.ox_target:addBoxZone({
+	coords = Config.stashloc,
+ 	size = vec3(1,1,1),
+ 	rotation = 11.0,
+ 	debug = false,
+ 	drawsprite = true,
+ 	options = {
+		{
+			event = 'md-stashes:client:vapeshop1',
+			icon = "fas fa-sign-in-alt",
+			label = "Stash",
+			groups = {'vapeshop'},
+		},
+		}
+	})
+
+ 	exports.ox_target:addBoxZone({
+		coords = Config.stashtwoloc,
+	 	size = vec3(1,1,1),
+	 	rotation = 11.0,
+	 	debug = false,
+	 	drawsprite = true,
+	 	options = {
+		{
+            event = 'md-stashes:client:vapeshop2',
+			icon = "fas fa-sign-in-alt",
+			label = "Stash",
+			groups = {'vapeshop'},
+		}
+	}
+	})
+	else
+	exports['qb-target']:AddBoxZone("craftvape",Config.craftloc,1.5, 1.75, { -- 963.37, -2122.95, 31.47
 	name = "craftvape",
 	heading = 11.0,
 	debugPoly = false,
@@ -311,4 +400,4 @@ exports['qb-target']:AddBoxZone("craftvape",Config.craftloc,1.5, 1.75, { -- 963.
 	},
 	distance = 2.5
  })
- end)
+end)

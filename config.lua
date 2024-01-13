@@ -1,7 +1,7 @@
 Config = {}
 
 Config.rp = true
-
+Config.Target = "ox" -- ox or qb
 
 Config.stashloc = vector3(383.04, -819.38, 29.3)
 Config.stashtwoloc = vector3(376.84, -823.94, 29.3)
