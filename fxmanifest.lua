@@ -19,4 +19,4 @@ shared_scripts {
 
 lua54 'yes'
 
-dependency '/assetpacks'
+
