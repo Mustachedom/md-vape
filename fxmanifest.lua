@@ -1,20 +1,21 @@
 name "md-vape"
 author "Mustache_dom"
-version "v1.1"
 description "Vape by Mustache_dom"
 fx_version "cerulean"
 game "gta5"
+version '2.0.0'
 
 client_scripts {
-	'client*.lua',
+	'client/**.lua',
 }
 
 server_scripts {
-    'server*.lua'
+    'server/**.lua'
 }
 
 shared_scripts {
-    'config.lua',
+    'shared/**.lua',
+    '@ox_lib/init.lua',
 }
 
 lua54 'yes'

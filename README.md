@@ -1,92 +1,133 @@
 how to install
 
-Requirements: ps-buffs, qb-core, rp or dp emotes
-step 1 add these items to your items.lua
+step 1 add these items to your items.lua and add the images 
 ```
 ["vegetable_glycol"] 				 = {["name"] = "vegetable_glycol", 			  	["label"] = "Vegetable Glycerin", 		["weight"] = 100, 		["type"] = "item", 		["image"] = "vegetableglycol.png", 	["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
 ["propelyne_glycol"] 				 = {["name"] = "propelyne_glycol", 			  	["label"] = "Propelyne Glycol", 		["weight"] = 100, 		["type"] = "item", 		["image"] = "propelyneglycol.png", 	["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
 ["nicotine"] 						 = {["name"] = "nicotine", 			  			["label"] = "Nicotine", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "nicotine.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
-["apple_vape"] 						 = {["name"] = "apple_vape", 			  			["label"] = "Apple Vape", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "apple_vape.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
-["brums_vape"] 						 = {["name"] = "brums_vape", 			  			["label"] = "Brums Vape", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "brums_vape.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
-["feistyvape"] 						 = {["name"] = "feistyvape", 			  			["label"] = "Feisty Vape", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "feistyvape.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
-["watermelon_vape"] 						 = {["name"] = "watermelon_vape", 			  			["label"] = "Watermelon Vape", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "watermelon_vape.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
-["yellow_vape"] 						 = {["name"] = "yellow_vape", 			  			["label"] = "Yellow Vape", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "yellow_vape.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
-```
-step 2 add this to your qb-management
-this goes in Config.BossMenus = {
-```
-	['vapeshop'] = {
-        vector3(375.71, -824.16, 30.09),
-    },
-```
-and this goes to Config.BossMenuZones = {
-```
-	['vapeshop'] = {
-        { coords = vector3(375.71, -824.16, 30.09), length = 1.15, width = 2.6, heading = 353.0, minZ = 28.59, maxZ = 32.99 },
-    },
-```
-step 3 add billing feature to your phone/payment scripts
-```
-ie jim.payments, gks-phone,qb-phone, okokbanking, renewed-phone
-```
-step 4 
-```
-add images
-```
-
-step 5  add this to qb-core -> shared -> jobs.lua
+["apple_extract"] 						 = {["name"] = "apple_extract", 			  			["label"] = "Apple Extract", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "apple_extract.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
+["watermelon_extract"] 						 = {["name"] = "watermelon_extract", 			  			["label"] = "Watermelon Extract", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "watermelon_extract.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
+["watermelon_vape"] 						 = {["name"] = "watermelon_vape", 			  			["label"] = "Watermelon Vape", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "vape.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
+["menthol_vape"] 						 = {["name"] = "menthol_vape", 			  			["label"] = "Menthol Vape", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "vape.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
+["unflavored_juice"] 						 = {["name"] = "unflavored_juice", 			  			["label"] = "Unflavored Juice", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "unflavored_juice.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
+["apple_vape"] 						 = {["name"] = "apple_vape", 			  			["label"] = "Apple Vape", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "vape.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
+["menthol_extract"] 						 = {["name"] = "menthol_extract", 			  			["label"] = "Menthol Extract", 				["weight"] = 100, 		["type"] = "item", 		["image"] = "menthol_extract.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false, ["combinable"] = nil,   ["description"] = ""},
 
 ```
-['vapeshop'] = {
-		label = 'Vape Shop',
-		defaultDuty = false,
-		offDutyPay = false,
-		grades = {
-            ['0'] = { name = 'Recruit', payment = 500 },
-			['1'] = { name = 'Management', isboss = true, payment = 0 },
-        },
+
+or if you're using ox inv
+```
+["apple_extract"] = {
+		label = "Apple Extract",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "apple_extract.png",
+		}
+	},
+
+	["watermelon_extract"] = {
+		label = "Watermelon Extract",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "watermelon_extract.png",
+		}
+	},
+
+	["watermelon_vape"] = {
+		label = "Watermelon Vape",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "vape.png",
+		}
+	},
+
+	["vegetable_glycol"] = {
+		label = "Vegetable Glycerin",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "vegetableglycol.png",
+		}
+	},
+
+	["propelyne_glycol"] = {
+		label = "Propelyne Glycol",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "propelyneglycol.png",
+		}
+	},
+
+	["menthol_vape"] = {
+		label = "Menthol Vape",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "vape.png",
+		}
+	},
+
+	["unflavored_juice"] = {
+		label = "Unflavored Juice",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "vapebottle.png",
+		}
+	},
+
+	["menthol_extract"] = {
+		label = "Menthol Vape",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "menthol_extract.png",
+		}
+	},
+
+	["apple_vape"] = {
+		label = "Apple Vape",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "vape.png",
+		}
+	},
+
+	["nicotine"] = {
+		label = "Nicotine",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "nicotine.png",
+		}
 	},
 ```
 
-If you change your job name then in the client file do this 
-
-``` 
-Control + f and type 
-job = "vapeshop",
-
-and replace with 
-job = "whateveryouchangeditto",
-```
-
-step 6 add this to your emotes ( dp or rp emotes)
-``` 
- ["hitvape"] = {
-    "mp_player_inteat@burger",
-    "mp_player_int_eat_burger",
-        "Hit Vape",
-    AnimationOptions = {
-        Prop = 'brum_voopoo_drag2',
-        PropBone = 18905,
-        PropPlacement = {
-            0.12, 0.05, 0.03, -60.0, 140.0, 360.0
-        },
-        EmoteMoving = true,
-        EmoteLoop = true,
-		 PtfxAsset = "core",
-            PtfxName = "exp_grd_bzgas_smoke",
-            PtfxNoProp = true,
-            PtfxPlacement = {
-                -0.0100,
-                0.0600,
-                0.6600,
-                0.0,
-                0.0,
-                0.0,
-                2.0
-            },
-            PtfxInfo = Config.Languages[Config.MenuLanguage]['vape'],
-            PtfxWait = 0,
-            PtfxCanHold = true
-    }
-},
-```
+Step 2 Fill Out The Config 
+inside the register table in the config there is something that says event = ''
+thats where you put your billing event, with so many banking/billing scripts i made the event you need to put a config option
