@@ -131,3 +131,19 @@ or if you're using ox inv
 Step 2 Fill Out The Config 
 inside the register table in the config there is something that says event = ''
 thats where you put your billing event, with so many banking/billing scripts i made the event you need to put a config option
+
+IF YOU ASK
+
+Q:Why doesn't this work i have enabled turned to false,
+
+A:think for one second.
+
+Q: Does this work with ox?
+A: read the config
+
+
+Q: How do i add more locations
+A: copy and paste
+
+
+
